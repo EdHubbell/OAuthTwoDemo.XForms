@@ -19,7 +19,7 @@ namespace OAuthTwoDemo.XForms.Android
 			// this is a ViewGroup - so should be able to load an AXML file and FindView<>
 			var activity = this.Context as Activity;
 
-			var auth = new OAuth2Authenticator (
+			var auth = new AzureAdOAuth2Authenticator (
 				clientId: App.Instance.OAuthSettings.ClientId, // your OAuth2 client id
 				scope: App.Instance.OAuthSettings.Scope, // The scopes for the particular API you're accessing. The format for this will vary by API.
 				authorizeUrl: new Uri (App.Instance.OAuthSettings.AuthorizeUrl), // the auth URL for the service
