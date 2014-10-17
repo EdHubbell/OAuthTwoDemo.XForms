@@ -7,13 +7,10 @@ namespace OAuthTwoDemo.XForms
 		protected override void OnAppearing ()
 		{
 			base.OnAppearing ();
-//
+
 			if (!App.Instance.IsAuthenticated) {
 				Navigation.PushModalAsync (new LoginPage ());
 			} 
-			//else {
-//				Navigation.PushModalAsync (new ProfilePage ());
-//			}
 		}
 	}
 }

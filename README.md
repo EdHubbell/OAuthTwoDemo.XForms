@@ -8,7 +8,7 @@ This example connects to a mobile service at http://byodir.azure-mobile.net/
 
 As of 10/16/2014, this demo works using a usename of ehubbell@gsdware.onmicrosoft.com and a password of NotSecure1.  Yes, the client ID is right there in the code sitting up on github.  I wanted to make it easy for other programmers to clone and test this, as I'm still having problems with completng the authentication.  Once those are ironed out, I'll cycle back thru and make this a more generic example.  
 
-The current problem is that after the auth completes, the auth window doesn't really go away.  I've tried DismissViewController, and that makes the auth window slide right down to the bottom, but then it pops right back up again.  
+The current problem is that on Android, the program crashes after the auth completes.  The iOS implementation seems to be working (at the moment).  
 
 ### AzureAdOAuth2Authenticator
 
