@@ -21,12 +21,12 @@ The fact that there are 2 instances of AzureAdOAuth2Authenticator.cs (one for ea
 
 I've seen examples on Azure sites that claim you can just use the WindowsAzureActiveDirectory MobileServiceAuthenticationProvider - Like so:
 
-'''
+```
 try
   {
     user = await client.LoginAsync(view, MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory);
   }
-'''
+```
 
 All the code I have says WindowsAzureActiveDirectory isn't a member of MobileServiceAuthenticationProvider.  So I think the example here is garbage:
 http://azure.microsoft.com/en-us/documentation/articles/partner-xamarin-mobile-services-ios-get-started-users/
