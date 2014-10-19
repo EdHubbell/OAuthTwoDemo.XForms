@@ -33,7 +33,7 @@ namespace OAuthTwoDemo.XForms.Android
 					if (eventArgs.IsAuthenticated) {
 						App.Instance.SuccessfulLoginAction.Invoke ();
 						// Use eventArgs.Account to do wonderful things
-						App.Instance.SaveToken (eventArgs.Account.Properties ["access_token"]);
+						App.Instance.SaveToken (eventArgs.Account.Properties ["token"]);
 					} else {
 						// The user cancelled
 					}

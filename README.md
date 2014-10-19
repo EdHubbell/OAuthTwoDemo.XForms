@@ -2,19 +2,21 @@
 
 ### Forked to focus on Azure AD authentication
 
-Getting Azure AD authentication to run in a Xamarin forms app using Xamarin.Auth can be challenging.  At least is has been for me.  There are 100 ways for it not to work, of which I have found several.  I still haven't quite gotten it to work yet.
+Getting Azure AD authentication to run in a Xamarin forms app using Xamarin.Auth can be challenging.  At least is has been for me.  There are 100 ways for it not to work, of which I have found several.  This seems to be working, although at present it only allows you to authenticate.  Not actually calling any services with the token sent back.
 
 This example connects to a mobile service at http://byodir.azure-mobile.net/
 
-As of 10/19/2014, this demo works using a usename of tuser@gsdware.com and a password of FooBar1212.  Yes, the client ID is right there in the code sitting up on github.  I wanted to make it easy for other programmers to clone and test this, as I'm still having problems with completng the authentication.  Once those are ironed out, I'll cycle back thru and make this a more generic example.  
+As of 10/19/2014, this demo works using a usename of tuser@gsdware.com and a password of FooBar1212.  Yes, the client ID is right there in the code sitting up on github.  I wanted to make it easy for other programmers to clone and test this, as I'm still not happy with the structure and the code (first real week of Xamarin dev work - Cut me some slack).  Eventually I'll cycle back thru and make this a more generic example.  Or I won't. 
 
-The current problem is that on Android, the program crashes after the auth completes.  The iOS implementation seems to be working (at the moment).  
+Both the iOS and Android implementations seem to be working (at the moment).  
 
 ### AzureAdOAuth2Authenticator
 
 Another thing I found I had to do for Azure AD was to override Xamarin.Auth.OAuth2Authenticator with AzureAdOAuth2Authenticator so we could look for 'token' instead of the hard coded 'access_token'.  
 
 The fact that there are 2 instances of AzureAdOAuth2Authenticator.cs (one for each platform) bothers me greatly.  I'm new to Xamarin development, so I'm certain there is a better way to do this.  I just don't know what it is.  Probably changing Xamarin.Auth to accept settings for all the string constants in there.
+
+I also had to change the renderers for both to also look for 'token'.  Seems like too many places to be editing strings, yeah?  Well, it is an example, not foundational code or anything.  I think changes to Xamarin.Auth would be a better place to address issues like these.
 
 ### What About MobileServiceAuthenticationProvider.WindowsAzureActiveDirectory?
 
